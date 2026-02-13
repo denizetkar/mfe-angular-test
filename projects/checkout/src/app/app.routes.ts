@@ -1,3 +1,5 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+import { remoteRoutes } from './remote-routes';
+
+export const routes: Routes = remoteRoutes;

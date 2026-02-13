@@ -1,0 +1,21 @@
+{
+  "manifestVersion": 1,
+  "generatedAt": "2026-02-13T00:00:00.000Z",
+  "remotes": {
+    "catalog": {
+      "entry": "http://localhost:4201/remoteEntry.json",
+      "exposes": {
+        "routes": "./routes"
+      },
+      "version": "0.0.0-local"
+    },
+    "checkout": {
+      "entry": "http://localhost:4202/remoteEntry.json",
+      "exposes": {
+        "routes": "./routes"
+      },
+      "version": "0.0.0-local"
+    }
+  }
+}
+
