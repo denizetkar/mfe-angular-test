@@ -3,6 +3,10 @@ const { withNativeFederation, shareAll } = require('@angular-architects/native-f
 module.exports = withNativeFederation({
   name: 'shell',
 
+  // Share TS path-mapped workspace libs (see tsconfig.json compilerOptions.paths)
+  // This prevents bundling the same library into multiple MFEs (which can trigger NG0912 collisions).
+  sharedMappings: ['ui'],
+
 
   shared: {
     ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
@@ -23,6 +27,10 @@ module.exports = withNativeFederation({
     // New feature for more performance and avoiding
     // issues with node libs. Comment this out to
     // get the traditional behavior:
-    ignoreUnusedDeps: true
+    // NOTE: We keep this OFF for now because it can aggressively remove
+    // sharedMappings (TS path-mapped workspace libs) during analysis in dev,
+    // which leads to the same library being bundled into multiple MFEs and can
+    // trigger Angular NG0912 component id collisions.
+    ignoreUnusedDeps: false
   }
 });

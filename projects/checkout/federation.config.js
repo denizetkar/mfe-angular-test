@@ -3,6 +3,10 @@ const { withNativeFederation, shareAll } = require('@angular-architects/native-f
 module.exports = withNativeFederation({
   name: 'checkout',
 
+  // Share TS path-mapped workspace libs (see tsconfig.json compilerOptions.paths)
+  // This prevents bundling the same library into multiple MFEs (which can trigger NG0912 collisions).
+  sharedMappings: ['ui'],
+
 
 
   exposes: {
@@ -28,6 +32,7 @@ module.exports = withNativeFederation({
     // New feature for more performance and avoiding
     // issues with node libs. Comment this out to
     // get the traditional behavior:
-    ignoreUnusedDeps: true
+    // NOTE: Keep OFF for now (see shell federation.config.js)
+    ignoreUnusedDeps: false
   }
 });
