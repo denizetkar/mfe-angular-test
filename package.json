@@ -3,10 +3,18 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "ng serve shell",
+    "start:shell": "ng serve shell",
+    "start:catalog": "ng serve catalog",
+    "start:checkout": "ng serve checkout",
+    "build": "ng build shell",
+    "build:catalog": "ng build catalog",
+    "build:checkout": "ng build checkout",
+    "watch": "ng build shell --watch --configuration development",
+    "test": "ng test",
+    "test:shell": "ng test shell",
+    "test:catalog": "ng test catalog",
+    "test:checkout": "ng test checkout"
   },
   "prettier": {
     "printWidth": 100,
