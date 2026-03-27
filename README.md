@@ -20,11 +20,11 @@ mfe-angular-test/            ← monorepo root (single package.json)
 
 ## Prerequisites
 
-| Tool | Version |
-|---|---|
-| Node.js | 20 LTS or later |
-| pnpm | 10.x (`corepack enable && corepack prepare pnpm@latest --activate`) |
-| Angular CLI | included — use `pnpm ng …` or `npx ng …` |
+| Tool        | Version                                                             |
+| ----------- | ------------------------------------------------------------------- |
+| Node.js     | 20 LTS or later                                                     |
+| pnpm        | 10.x (`corepack enable && corepack prepare pnpm@latest --activate`) |
+| Angular CLI | included — use `pnpm ng …` or `npx ng …`                            |
 
 Install all dependencies (one command from the repo root):
 
@@ -85,9 +85,9 @@ dev server. The default content points to localhost ports 4201/4202.
 
 You can point the shell at a different manifest without rebuilding:
 
-| Method | Example |
-|---|---|
-| Query param | `http://localhost:4200/?manifest=http://my-server/mfe.manifest.json` |
+| Method       | Example                                                                                     |
+| ------------ | ------------------------------------------------------------------------------------------- |
+| Query param  | `http://localhost:4200/?manifest=http://my-server/mfe.manifest.json`                        |
 | localStorage | `localStorage.setItem('mfe:manifestUrl', 'http://my-server/mfe.manifest.json')` then reload |
 
 The shell also stores the last successfully loaded manifest as
@@ -161,10 +161,10 @@ Tests run with [Vitest](https://vitest.dev/) via `@angular/build:unit-test`.
 Detailed architecture decisions, dependency-sharing rules, and 2026 best
 practices are documented in [`plans/`](plans/):
 
-| File | Topic |
-|---|---|
-| `step1-theory-…` | MFE theory & native-federation mental model |
-| `step2-2026-best-practices-…` | Research notes: 2026 guidance |
-| `step3-hands-on-architecture-…` | Architecture & integration contract |
-| `step4-implementation-plan.md` | Build plan |
-| `step5-what-you-have-now-…` | Current state explanation |
+| File                            | Topic                                       |
+| ------------------------------- | ------------------------------------------- |
+| `step1-theory-…`                | MFE theory & native-federation mental model |
+| `step2-2026-best-practices-…`   | Research notes: 2026 guidance               |
+| `step3-hands-on-architecture-…` | Architecture & integration contract         |
+| `step4-implementation-plan.md`  | Build plan                                  |
+| `step5-what-you-have-now-…`     | Current state explanation                   |

@@ -138,4 +138,3 @@ This gives you the “real” MFE experience (composition + dependency sharing +
 ## 8) Next step
 
 Next we’ll do best-practices research for 2026 (Angular + federation + runtime config + sharing + security + performance), then turn that into an implementation plan and start coding.
-

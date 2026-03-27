@@ -4,9 +4,7 @@ import { Component } from '@angular/core';
   selector: 'lib-ui',
   standalone: true,
   imports: [],
-  template: `
-    <span class="badge"><ng-content /></span>
-  `,
+  template: ` <span class="badge"><ng-content /></span> `,
   styles: `
     .badge {
       display: inline-block;
@@ -18,6 +16,4 @@ import { Component } from '@angular/core';
     }
   `,
 })
-export class Ui {
-
-}
+export class Ui {}

@@ -112,4 +112,3 @@ Both are standard:
 - **Polyrepo** is common where teams are fully autonomous and releases are decoupled.
 
 For learning, we’ll use a **single repo / multi-project workspace**, but we’ll still implement runtime manifest loading so the architecture maps to a polyrepo deployment model.
-

@@ -30,12 +30,17 @@ Conceptually:
 export const remoteRoutes: Routes = [
   {
     path: '',
-    providers: [/* remote-scoped providers */],
+    providers: [
+      /* remote-scoped providers */
+    ],
     children: [
-      { path: '', loadComponent: () => import('./pages/home').then(m => m.HomeComponent) },
-      { path: 'details/:id', loadComponent: () => import('./pages/details').then(m => m.DetailsComponent) }
-    ]
-  }
+      { path: '', loadComponent: () => import('./pages/home').then((m) => m.HomeComponent) },
+      {
+        path: 'details/:id',
+        loadComponent: () => import('./pages/details').then((m) => m.DetailsComponent),
+      },
+    ],
+  },
 ];
 ```
 

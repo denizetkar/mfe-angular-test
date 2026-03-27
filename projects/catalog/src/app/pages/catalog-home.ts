@@ -12,6 +12,6 @@ import { Ui } from 'ui';
     <p><lib-ui>remote: catalog</lib-ui></p>
 
     <a [routerLink]="['/catalog/details', 42]">Open details for id=42</a>
-  `
+  `,
 })
 export class CatalogHomeComponent {}

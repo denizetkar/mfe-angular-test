@@ -11,7 +11,6 @@ import { RouterLink } from '@angular/router';
       <li><a routerLink="/catalog">Catalog</a></li>
       <li><a routerLink="/checkout">Checkout</a></li>
     </ul>
-  `
+  `,
 })
 export class HomeComponent {}
-

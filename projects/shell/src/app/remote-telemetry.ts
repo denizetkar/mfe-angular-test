@@ -31,13 +31,13 @@ export class RemoteTelemetryService {
   });
 
   record(event: RemoteLoadEvent): void {
-    this.events.update(prev => [...prev, event]);
+    this.events.update((prev) => [...prev, event]);
     // Always emit to the browser console so DevTools Network timeline aligns easily
     const badge = event.status === 'ok' ? '✓' : '✗';
     console.debug(
       `[MFE telemetry] ${badge} ${event.remoteName} v${event.version} — ` +
-      `${event.loadDurationMs.toFixed(0)} ms`,
-      event.status === 'error' ? event.error : ''
+        `${event.loadDurationMs.toFixed(0)} ms`,
+      event.status === 'error' ? event.error : '',
     );
   }
 }

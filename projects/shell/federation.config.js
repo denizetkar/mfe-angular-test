@@ -7,7 +7,6 @@ module.exports = withNativeFederation({
   // This prevents bundling the same library into multiple MFEs (which can trigger NG0912 collisions).
   sharedMappings: ['ui'],
 
-
   shared: {
     ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
   },
@@ -31,6 +30,6 @@ module.exports = withNativeFederation({
     // sharedMappings (TS path-mapped workspace libs) during analysis in dev,
     // which leads to the same library being bundled into multiple MFEs and can
     // trigger Angular NG0912 component id collisions.
-    ignoreUnusedDeps: false
-  }
+    ignoreUnusedDeps: false,
+  },
 });

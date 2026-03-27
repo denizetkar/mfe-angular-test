@@ -8,7 +8,6 @@ import { RouterLink } from '@angular/router';
     <h2>Review</h2>
     <p>Imagine payment + order confirmation here.</p>
     <a routerLink="/checkout">Back</a>
-  `
+  `,
 })
 export class CheckoutReviewComponent {}
-

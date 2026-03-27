@@ -11,6 +11,6 @@ import { Ui } from 'ui';
 
     <p><lib-ui>remote: checkout</lib-ui></p>
     <a routerLink="/checkout/review">Go to review</a>
-  `
+  `,
 })
 export class CheckoutHomeComponent {}

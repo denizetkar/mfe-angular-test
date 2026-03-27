@@ -7,6 +7,6 @@ import { RemoteStatusBarComponent } from './remote-status-bar';
   standalone: true,
   imports: [RouterOutlet, RemoteStatusBarComponent],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {}

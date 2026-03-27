@@ -1,6 +1,6 @@
 # Step 5 — What you have now (and why it works)
 
-This step documents the *current working state* of the repo after the scaffold + integration.
+This step documents the _current working state_ of the repo after the scaffold + integration.
 
 ## 1) Running topology (CSR)
 
@@ -12,7 +12,7 @@ You currently have three running Angular apps:
 
 ## 2) The key mechanism: Native Federation runtime initialization
 
-The shell does *two* runtime steps before bootstrapping Angular:
+The shell does _two_ runtime steps before bootstrapping Angular:
 
 1. Load an MFE manifest (your own JSON, not the native-federation default manifest)
 2. Call native federation’s `initFederation(remotesMap)` with the resolved remoteEntry URLs
@@ -83,4 +83,3 @@ Next we should:
 - Document the dev workflow (commands, ports, manifest override)
 - Add basic observability hooks (remote name/version + load timings)
 - Add a minimal contract test to ensure each remote exports `remoteRoutes`
-

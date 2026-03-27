@@ -7,10 +7,8 @@ module.exports = withNativeFederation({
   // This prevents bundling the same library into multiple MFEs (which can trigger NG0912 collisions).
   sharedMappings: ['ui'],
 
-
-
   exposes: {
-    './routes': './projects/catalog/src/app/remote-routes.ts'
+    './routes': './projects/catalog/src/app/remote-routes.ts',
   },
 
   shared: {
@@ -33,6 +31,6 @@ module.exports = withNativeFederation({
     // issues with node libs. Comment this out to
     // get the traditional behavior:
     // NOTE: Keep OFF for now (see shell federation.config.js)
-    ignoreUnusedDeps: false
-  }
+    ignoreUnusedDeps: false,
+  },
 });

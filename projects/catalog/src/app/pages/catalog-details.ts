@@ -8,10 +8,9 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
     <h2>Catalog details</h2>
     <p>id: {{ id() }}</p>
     <a routerLink="/catalog">Back</a>
-  `
+  `,
 })
 export class CatalogDetailsComponent {
   private readonly route = inject(ActivatedRoute);
   readonly id = computed(() => this.route.snapshot.paramMap.get('id') ?? 'n/a');
 }
-
