@@ -7,6 +7,24 @@ const DEFAULT_MANIFEST_URL = '/mfe.manifest.json';
 const MANIFEST_URL_LS_KEY = 'mfe:manifestUrl';
 const LAST_GOOD_MANIFEST_LS_KEY = 'mfe:lastGoodManifest';
 
+/**
+ * Synchronously returns the last successfully loaded manifest that was
+ * persisted to localStorage during `loadMfeManifest()`.
+ * Returns null if no manifest has been stored yet.
+ * Used by the telemetry layer to look up remote versions at route-load time
+ * without triggering another network request.
+ */
+export function getCachedManifest(): MfeManifest | null {
+  const raw = localStorage.getItem(LAST_GOOD_MANIFEST_LS_KEY);
+  if (!raw) return null;
+  try {
+    const parsed = JSON.parse(raw);
+    return isValidManifest(parsed) ? parsed : null;
+  } catch {
+    return null;
+  }
+}
+
 export function resolveManifestUrl(locationSearch = window.location.search): string {
   const url = new URLSearchParams(locationSearch).get('manifest');
   if (url) return url;
@@ -36,10 +54,8 @@ export async function loadMfeManifest(): Promise<MfeManifest> {
     localStorage.setItem(LAST_GOOD_MANIFEST_LS_KEY, JSON.stringify(json));
     return json;
   } catch (e) {
-    const lastGood = localStorage.getItem(LAST_GOOD_MANIFEST_LS_KEY);
-    if (!lastGood) throw e;
-    const parsed = JSON.parse(lastGood);
-    if (!isValidManifest(parsed)) throw e;
+    const parsed = getCachedManifest();
+    if (!parsed) throw e;
     return parsed;
   }
 }
